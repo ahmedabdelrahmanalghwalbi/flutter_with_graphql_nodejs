@@ -4,8 +4,8 @@ import { expressMiddleware } from "@apollo/server/express4";
 import { ApolloServerPluginDrainHttpServer } from "@apollo/server/plugin/drainHttpServer";
 import {dbConnect} from './db_connect.js';
 import {typeDefs} from './schema.js';
-import {resolves} from './resolvers.js';
-import cors from './cors';
+import {resolvers} from './resolvers.js';
+import cors from 'cors';
 import bodyParser from "body-parser";
 
 // connect to Database
@@ -14,7 +14,7 @@ const app = express();
 //connect to Apollo Server
 const server = new ApolloServer({
     typeDefs,
-    resolvers: resolves,
+    resolvers: resolvers,
     plugins: [
         ApolloServerPluginDrainHttpServer({
             httpServer: app
