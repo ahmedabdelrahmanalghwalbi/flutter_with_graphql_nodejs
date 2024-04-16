@@ -3,6 +3,7 @@ export const typeDefs = `#graphql
     type ToDo{
         id: String!,
         title: String!,
+        content:String!,
         completed: Boolean!,
     }
 
